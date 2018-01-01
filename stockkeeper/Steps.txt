@@ -1,0 +1,31 @@
+pip install djangorestframework
+add it in settings.py
+add configuration settings.py
+add routes for authentication in urls.py
+create super user
+- python3.6 manage.py createsuperuser
+- enter username and password
+go to http://localhost:8000/api-auth/login/
+build serializers
+- create serializers.py in stockkeeper
+- build serializer class for models
+play with serializers
+- python3.6 manage.py shell
+- from rest_framework.renderers import JSONRenderer
+- from webapp.models import Purchase, Product
+- from webapp.serializers import ProductSerializer
+- from django.shortcuts import get_object_or_404
+- product = Product.objects.latest('id')
+- serializer = ProductSerializer(product)
+- serializer.data 
+- JSONRenderer().render(serializer.data)
+create APIVIEW
+- create views.py
+- add views
+hook views to urls
+- create urls.py
+- write url patterns
+- hook that urls.py to parent urls.py
+test whether views works (get and post)
+generic crud view
+- 
