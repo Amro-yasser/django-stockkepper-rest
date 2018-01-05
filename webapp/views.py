@@ -36,7 +36,7 @@ class ListCreatePurchase(APIView):
 		return Response(ser.data)
 
 	def post(self, request, format = None):
-		ser = serializers.ProductSerializer(data=request.data)
+		ser = serializers.PurchaseSerializer(data=request.data)
 		ser.is_valid(raise_exception=True)
 		ser.save()
 		return Response(ser.data, status=status.HTTP_201_CREATED)

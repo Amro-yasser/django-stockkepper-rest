@@ -8,14 +8,14 @@ class Product(models.Model):
 class Purchase(models.Model):
 	rtn = models.CharField(max_length=128)
 	pon = models.CharField(max_length=128)
-	notes = models.CharField(max_length=300)
+	notes = models.CharField(max_length=300, default='')
 
 class PurchaseItem(models.Model):
 	location = models.CharField(max_length=128)
 	product = models.ForeignKey(Product, on_delete=models.CASCADE)
 	purchase = models.ForeignKey(Purchase, related_name='products', on_delete=models.CASCADE)
 	original_quantity = models.IntegerField()
-	allocated_quantity = models.IntegerField()
+	allocated_quantity = models.IntegerField(default=0)
 
 class Request(models.Model):
 	notes=models.CharField(max_length=300)
