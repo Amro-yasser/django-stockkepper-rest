@@ -29,3 +29,5 @@ hook views to urls
 test whether views works (get and post)
 generic crud view
 - 
+
+https://stackoverflow.com/questions/17280007/retrieving-a-foreign-key-value-with-django-rest-framework-serializers
